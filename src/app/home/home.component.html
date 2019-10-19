@@ -1,0 +1,37 @@
+<h1>Home Page</h1>
+
+<div class="play-container">
+  <!-- click event calls countClick method -->
+  <!-- clickCounter - property / variable -->
+  <p>
+    You've Clicked <span (click)="countClick()">this</span>
+    {{ clickCounter }} times.
+  </p>
+</div>
+
+<div class="play-container">
+  <p>
+    <!-- ngModel receives and sends back data -->
+    <input
+      type="text"
+      [(ngModel)]="name"
+      [ngStyle]="{
+        'background-color': clickCounter > 5 ? 'yellow' : 'lightgray',
+        border: clickCounter > 6 ? '4px solid black' : 'none'
+      }"
+    />
+    <br />
+    <strong>You said: </strong>{{ name }}
+  </p>
+</div>
+
+<div class="play-container" [ngClass]="setClasses()">
+  <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+    Click counter is greater than 4!
+  </ng-template>
+
+  <!-- none is the variable defined above -->
+  <ng-template #none>
+    Click Counter is less than 4 :/
+  </ng-template>
+</div>
