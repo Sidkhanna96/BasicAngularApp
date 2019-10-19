@@ -45,4 +45,4 @@ Generate Components/Pages - `ng g c nameOfComponent`
 
 Link the pages through app-routing.module.ts
 
-generate Service: `ng g s nameOfService`
+generate api Service: `ng g s nameOfService`
